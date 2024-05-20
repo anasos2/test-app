@@ -105,7 +105,7 @@ const Live = () => {
                 <Menu className="z-20" closeMenu={closeMenu} />
             ) : (
                 
-                    <div className="flex justify-center  bg-[#e8f0fb] z-40 h-screen relativ ">
+                    <div className="flex justify-center  bg-[#e8f0fb] z-40 sm:h-screen relativ ">
                 <div className=" w-full h-[95vh] absolute rounded-[4000px] bg-[#15406d]  mt-[-60vh] z-30 circle "></div>
                 <div className="w-[77%] z-50">
                     <div className="flex justify-between my-6  ">

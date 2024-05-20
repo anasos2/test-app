@@ -295,7 +295,7 @@ const PerDay = () => {
       {isMenuOpen ? (
         <Menu className="z-20" closeMenu={closeMenu} />
       ) : (
-        <div className="flex justify-center bg-[#e8f0fb] z-50 h-screen relative">
+        <div className="flex justify-center bg-[#e8f0fb] z-50 sm:h-screen  relative">
           <div className="w-full h-[95vh] absolute rounded-[4000px] bg-[#15406d] mt-[-60vh] z-40 circle"></div>
           <div className="w-[77%] z-50">
             <div className="flex justify-between my-6">
