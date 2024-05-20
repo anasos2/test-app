@@ -1,0 +1,48 @@
+{
+  "loginScreen": {
+    "login": "Se connecter",
+    "register": "Bienvenue",
+    "emailPlaceholder": "Adresse e-mail",
+    "passwordPlaceholder": "Mot de passe",
+    "registerButton": "Se connecter",
+    "arabic": "Arabe",
+    "french": "Français",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUp": "S'inscrire"
+  },
+  "live": {
+    "hello": "Bonjour",
+    "coffee": "Café",
+    "juice": "Jus",
+    "milk": "Lait",
+    "milkCoffee":"Lait Café",
+    "tai":"tai"
+  },
+  "registerScreen": {
+    "YouHaveAnAccount": "",
+    "SignIn": "Vous avez un compte",
+    "Register": "S'inscrire",
+    "RegisterNow": "S'inscrire maintenant",
+    "repate Password": "Répéter le mot de passe",
+    "password": "Mot de passe",
+    "fullName": "Nom complet",
+    "Email": "E-mail"
+  },
+  "Language":{
+  "Language-ar-fr":"Choisissez votre langue préférée"},
+  "menu":{
+    "consumption":"Consommation",
+    "percentage":"Pourcentage",
+    "logout":"Se déconnecter",
+    "account":"Compte",
+    "details":"Détails",
+    "live":"en direct"
+
+  },
+  "detail":{
+    "date":"date",
+    "id":"identifier",
+    "detail":"détail",
+    "dataNotFound":"Aucun article n'a été consommé"
+  }
+}

@@ -1,0 +1,53 @@
+{"loginScreen":
+{
+    "login": "تسجيل دخول",
+    "register": "مرحبا بك",
+    "emailPlaceholder": "بريد إلكتروني",
+    "passwordPlaceholder": "كلمة السر",
+    "registerButton": "سجل دخولك",
+    "arabic": "العربية",
+    "french": "الفرنسية",
+    "noAccount": "لا يوجد لديك حساب ؟",
+    "signUp": "انشاء حسابك الأن"
+},
+"live":
+{
+  "hello":"مرحبا",
+   "coffee":"قهوة",
+   "juice":"عصير",
+   "milk":"حليب",
+   "milkCoffee":"قهوة و حليب",
+   "tai":"أتاي"
+},
+"registerScreen":{
+  "YouHaveAnAccount":"",
+  "SignIn":"لديك حساب",
+  "Register":"تسجيل الدخول",
+  "RegisterNow":"تسجيل الدخول الأن",
+  "repate Password":"أعد كلمة المرور",
+  "password":"كلمة المرور",
+  "fullName":"الاسم الكامل",
+  "Email":"البريد الإلكتروني"
+
+},
+"Language":{
+  
+  "Language-ar-fr":"اختر لغتك المفضلة"
+},
+"menu":{
+  "consumption": "استهلاك",
+  "percentage": "النسبة المئوية",
+  "logout": "تسجيل الخروج",
+  "account": "الحساب",
+  "details": "التفاصيل",
+  "live":"مباشر"
+},
+"detail":{
+  "date":"التاريخ",
+  "id":"رقم تعريف",
+  "detail":"التفاصيل",
+  "dataNotFound":"لا يوجد أي عنصر تم استهلاكه"
+}
+
+}
+  
