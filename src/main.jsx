@@ -31,9 +31,13 @@ const firebaseConfig = {
   appId: "1:909814183342:web:910052e1edd4e6c1c5043f"
 };;
 
-const router = createBrowserRouter([
+const router = createBrowserRouter([ 
   {
     path: '/',
+    element: <Language />,
+  },
+  {
+    path: '/live',
     element: <Live />,
   },
  
@@ -41,10 +45,7 @@ const router = createBrowserRouter([
     path: '/home',
     element: <Home />,
   },
-  {
-    path: '/language',
-    element: <Language />,
-  },
+ 
   {
     path: '/register',
     element: <RegisterScreen />,
