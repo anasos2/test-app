@@ -315,7 +315,7 @@ const PerDay = () => {
             </div>
             <div className="flex flex-col">
               <div className="flex">
-                <div className={`flex justify-center py-4 w-[50%] mr-6`}>
+                <div className={`flex justify-center py-4 w-[40%] mr-14`}>
                   <input
                     className="outline outline-1 outline-gray-800 bg-inherit rounded-sm hover:outline-black active:outline-blue-700 "
                     type="text"
