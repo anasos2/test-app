@@ -315,9 +315,9 @@ const PerDay = () => {
             </div>
             <div className="flex flex-col">
               <div className="flex">
-                <div className={`flex justify-center py-4 w-[40%] mr-14`}>
+                <div className="flex justify-center py-4 w-[60%] ">
                   <input
-                    className="outline outline-1 outline-gray-800 bg-inherit rounded-sm hover:outline-black active:outline-blue-700 "
+                    className="outline outline-1 w-[90%] outline-gray-800 bg-inherit rounded-sm hover:outline-black active:outline-blue-700 "
                     type="text"
                     id="nn"
                     onClick={() => {
@@ -331,7 +331,7 @@ const PerDay = () => {
                     }
                   />
                 </div>
-                <div className="flex justify-center py-4 w-[50%]  ">
+                <div className="flex justify-center py-4 w-[40%]  ">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <TimePicker
                       views={["hours"]}
