@@ -36,7 +36,8 @@
     "logout":"Se déconnecter",
     "account":"Compte",
     "details":"Détails",
-    "live":"en direct"
+    "live":"en direct",
+    "language":"langue"
 
   },
   "detail":{
