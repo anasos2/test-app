@@ -28,9 +28,9 @@ const Pourcentage = () => {
     setShowCalendar(prevState => !prevState); // Toggle showCalendar state
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     calculatePourcentageByDay(selectedDate);
@@ -78,11 +78,11 @@ const Pourcentage = () => {
   };
 
   const dataa = [
-    { label: t('live.milk'), value: MilkCount, color: '#0088FE' },
-    { label: t('live.coffee'), value: CoffeeCount, color: '#00C49F' },
-    { label: t('live.milkCoffee'), value: MilkCoffeeCount, color: '#FFBB28' },
-    { label: t('live.tai'), value: TaiCount, color: '#FF8042' },
-    { label: t('live.juice'), value: JuiceCount, color: '#FFBB80' },
+    { label: t('live.milk'), value: 8, color: '#0088FE' },
+    { label: t('live.coffee'), value: 10, color: '#00C49F' },
+    { label: t('live.milkCoffee'), value: 2, color: '#FFBB28' },
+    { label: t('live.tea'), value: 2, color: '#FF8042' },
+    { label: t('live.juice'), value: 3, color: '#FFBB80' },
   ];
 
   const sizing = {
@@ -114,7 +114,7 @@ const Pourcentage = () => {
             </div>
             <div className="pb-5 z-50" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
               <h5 className="text-gray-500">5/5/2024</h5>
-              <h1 className="text-white">{t('live.hello')}, Anas</h1>
+              <h1 className={`text-white hello ${i18n.language}`}>{t('live.hello')}, Anas</h1>
             </div>
             <div className="flex justify-center py-4">
               <input
@@ -162,23 +162,23 @@ const Pourcentage = () => {
               <div className="flex flex-col w-1/2">
                 <div className="flex items-centermy-1 ">
                 <div className="w-5 h-5 bg-[#0088FE] mx-2"></div>
-                <div className=" "> {t('live.milk')}</div>
+                <div className={`pourcentage ${i18n.language}`}> {t('live.milk')}</div>
                 </div>  
                 <div className="flex items-center my-1 ">
                 <div className="w-5 h-5 bg-[#00C49F] mx-2"></div>
-                <div className=" "> {t('live.coffee')}</div>
+                <div className={`pourcentage ${i18n.language}`}> {t('live.coffee')}</div>
                 </div>  
                 <div className="flex items-center my-1">
                 <div className="w-5 h-5 bg-[#FFBB28] mx-2"></div>
-                <div className=" "> {t('live.milkCoffee')}</div>
+                <div className={`pourcentage ${i18n.language}`}> {t('live.milkCoffee')}</div>
                 </div>  
                 <div className="flex items-center my-1 ">
                 <div className="w-5 h-5 bg-[#FF8042] mx-2"></div>
-                <div className=" "> {t('live.tai')}</div>
+                <div className={`pourcentage ${i18n.language}`}> {t('live.tea')}</div>
                 </div>  
                 <div className="flex items-center my-1 ">
                 <div className="w-5 h-5 bg-[#FFBB80] mx-2"></div>
-                <div className=" "> {t('live.juice')}</div>
+                <div className={`pourcentage ${i18n.language}`}> {t('live.juice')}</div>
                 </div>  
                 </div>
               </div>

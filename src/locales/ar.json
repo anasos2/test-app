@@ -17,7 +17,7 @@
    "juice":"عصير",
    "milk":"حليب",
    "milkCoffee":"قهوة و حليب",
-   "tai":"أتاي"
+   "tea":"أتاي"
 },
 "registerScreen":{
   "YouHaveAnAccount":"",
@@ -41,7 +41,7 @@
   "account": "الحساب",
   "details": "التفاصيل",
   "live":"مباشر",
-  "language":"الغة"
+  "language":"اللغة"
 },
 "detail":{
   "date":"التاريخ",

@@ -9,6 +9,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import dataaa from "../constants/dataa";
+import '../App.css'
+
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -89,13 +92,13 @@ const Live = () => {
         setOpen(true);
     };
 
-    useEffect(() => {
-        fetchData();
-        const interval = setInterval(() => {
-            fetchData();
-        }, 1000);
-        return () => clearInterval(interval);
-    }, []);
+    // useEffect(() => {
+    //     fetchData();
+    //     const interval = setInterval(() => {
+    //         fetchData();
+    //     }, 1000);
+    //     return () => clearInterval(interval);
+    // }, []);
 
    
 
@@ -115,21 +118,24 @@ const Live = () => {
                         <div className=" rounded-full w-9 h-9 bg-slate-500"><p className="flex justify-center items-center py-1">AB</p></div>
                     </div>
                     <div className=" pb-5 z-50" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'} >
-                        <h5 className=" text-gray-500">5 may 2024</h5>
-                        <h1 className=" text-white ">{t('live.hello')}, Anas</h1>
+                        <h5 className=" text-gray-500 ">5 may 2024</h5>
+                        <h1 className={`text-white hello ${i18n.language}`}>{t('live.hello')}, Anas</h1>
                     </div>
                     {/* Afficher les statistiques */}
                     <div className="flex  justify-center z-50 ">
                         <div className=" ">
                             <div className="flex ">
                                 <div className="w-[150px] bg-[#f9fafe] mx-4 rounded-2xl shadow-lg pl-10">
-                                    <div className="pr-100 py-4 font-bold text-2xl mb-2 text-[#0a2554]">{t('live.coffee')}</div>
-                                    <img src="../coffee.svg" alt="coffee" className=" w-14 py-4" />
-                                    <div className="font-bold text-xl mb-2 text-[#0a2554] pt-6">{calculateLiveCount('coffee')}</div>
+                                <div className={`pr-100 py-4 font-bold text-2xl mb-2 text-[#0a2554] rubik ${i18n.language}`}>
+  {t('live.coffee')}
+</div>
+
+                                    <img src="../coffee.svg" alt="coffee" className=" w-14 py-4 " />
+                                    <div className="font-bold text-xl mb-2  pt-6 text-[#0a2554] ">{calculateLiveCount('coffee')}</div>
                                     <div className="flex justify-between pb-4 ">
                       
                     
-                       <button className=" mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" type="button"onClick={() =>{ handleDetailClick("coffee"); handleClickOpen();}}> 
+                       <button className={`mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 rubikBold  ${i18n.language}`} type="button"onClick={() =>{ handleDetailClick("coffee"); handleClickOpen();}}> 
                        
                         {t("detail.detail")}
                       </button>
@@ -138,13 +144,13 @@ const Live = () => {
                                 </div>
                                 {/* Ajoutez les autres sections ici */}
                                 <div className="w-[150px] bg-[#f9fafe] mx-4 rounded-2xl shadow-lg pl-10">
-                                    <div className="pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554]">{t('live.juice')}</div>
+                                    <div className={`pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554] rubik ${i18n.language}`}>{t('live.juice')}</div>
                                     <img src="../juice.svg" alt="juice" className="w-14 py-4" />
                                     <div className="font-bold text-xl mb-2 text-[#0a2554] pt-6">{calculateLiveCount('juice')}</div>
                                     <div className="flex justify-between pb-4 ">
                       
                     
-                      <button className=" mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" type="button"onClick={() =>{ handleDetailClick("juice"); handleClickOpen();}}> 
+                                    <button className={`mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 rubikBold  ${i18n.language}`} type="button"onClick={() =>{ handleDetailClick("juice"); handleClickOpen();}}> 
                        
                        {t("detail.detail")}
                      </button>
@@ -154,13 +160,13 @@ const Live = () => {
                             </div>
                             <div className="flex pt-3">
                                 <div className="w-[150px]  bg-[#f9fafe] mx-4 rounded-2xl shadow-lg pl-10 ">
-                                    <p className="pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554]  ">{t('live.milk')}</p>
+                                    <p className={`pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554] rubik ${i18n.language}`}>{t('live.milk')}</p>
                                     <img src="../milk.svg" alt="milk" className="w-14 py-4" />
                                     <div className="font-bold text-xl mb-2 text-[#0a2554] pt-6">{calculateLiveCount('milk')}</div>
                                     <div className="flex justify-between pb-4 ">
                       
                     
-                      <button className=" mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" type="button"onClick={() =>{ handleDetailClick("milk"); handleClickOpen();}}> 
+                                    <button className={`mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 rubikBold  ${i18n.language}`} type="button"onClick={() =>{ handleDetailClick("milk"); handleClickOpen();}}> 
                        
                        {t("detail.detail")}
                      </button>
@@ -168,13 +174,13 @@ const Live = () => {
                     </div>
                                 </div>
                                 <div className="w-[150px] bg-[#f9fafe] mx-4 rounded-2xl shadow-lg pl-10 max-w-1/2">
-                                    <p className="pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554] max-w-1/2">{t('live.tai')}</p>
+                                    <p className={`pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554] rubik ${i18n.language}`}>{t('live.tea')}</p>
                                     <img src="../tai.svg" alt="milk" className="w-14 py-4" />
                                     <div className="font-bold text-xl mb-2 text-[#0a2554] pt-6">{calculateLiveCount('tai')}</div>
                                     <div className="flex justify-between pb-4 ">
                       
                     
-                      <button className=" mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" type="button"onClick={() =>{ handleDetailClick("tai"); handleClickOpen();}}> 
+                                    <button className={`mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 rubikBold  ${i18n.language}`} type="button"onClick={() =>{ handleDetailClick("tai"); handleClickOpen();}}> 
                        
                        {t("detail.detail")}
                      </button>
@@ -184,13 +190,13 @@ const Live = () => {
                             </div>
                             <div className="flex pt-3">
                                 <div className="w-[150px]  bg-[#f9fafe] mx-4 rounded-2xl shadow-lg pl-10 ">
-                                    <p className="pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554]  ">{t('live.milkCoffee')}</p>
+                                    <p className={`pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554] rubik ${i18n.language}`}>{t('live.milkCoffee')}</p>
                                     <img src="../milkcoffee.png" alt="milk" className="w-14 py-4" />
                                     <div className="font-bold text-xl mb-2 text-[#0a2554] pt-6">{calculateLiveCount('milkCoffee')}</div>
                                     <div className="flex justify-between pb-4 ">
                       
                     
-                      <button className=" mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" type="button"onClick={() =>{ handleDetailClick("milkCoffee"); handleClickOpen();}}> 
+                                    <button className={`mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 rubikBold  ${i18n.language}`} type="button"onClick={() =>{ handleDetailClick("milkCoffee"); handleClickOpen();}}> 
                        
                        {t("detail.detail")}
                      </button>
@@ -229,26 +235,25 @@ const Live = () => {
                     <CloseIcon />
                 </IconButton>
                 <DialogContent dividers>
-                    <div dir={i18n.language === "ar" ? "rtl" : "ltr"} className="bg-[#e8f0fb] z-50 h-screen relative">
-                        {detailData && detailData.length > 0 ? (
-                            detailData.map((item) => (
-                                <div key={item.id} className="bg-[#f9fafe] mx-4 rounded-2xl shadow-lg">
-                                    {/* Display details for each consumed object */}
-                                    <img src={item.image} alt={item.category} className="py-4" />
-                                    <div className="font-bold text-xl text-[#0a2554]">
-                                        {t("detail.id")}: {item.id}
-                                    </div>
-                                    <div className="font-bold text-xl text-[#0a2554] pt-6 mb-4">
-                                        {t("detail.date")}: <p>{item.date}</p>
-                                    </div>
-                                </div>
-                            ))
-                        ) : (
-                            <div>{t("detail.dataNotFound")}</div>
-                        )}
-                    </div>
-                    
-                </DialogContent>
+    <div dir={i18n.language === "ar" ? "rtl" : "ltr"} className="bg-[#e8f0fb] z-50 h-screen relative">
+      {dataaa && dataaa.length > 0 ? (
+        dataaa.map((item) => (
+          <div key={item.id} className="bg-[#f9fafe] mx-4 rounded-2xl shadow-lg">
+            <img src="liveconsomed.PNG" alt={item.category} className="py-4" />
+            <div className="font-bold text-xl text-[#0a2554]">
+              {t("detail.id")}: {item.id}
+            </div>
+            <div className="font-bold text-xl text-[#0a2554] pt-6 mb-4">
+              {t("detail.date")}: <p>{item.date}</p>
+            </div>
+          </div>
+        ))
+      ) : (
+        <div>{t("detail.dataNotFound")}</div>
+      )}
+    </div>
+</DialogContent>
+
             </BootstrapDialog>
         </>
     );

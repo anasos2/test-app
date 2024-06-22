@@ -30,8 +30,8 @@ const LoginScreen = () => {
       width: '100%',
       height: '100vh'
     }}>
-      <h1 className="text-black font-bold text-5xl ml-7 mr-7 mb-10" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>{t('loginScreen.login')}</h1>
-      <h3 className="text-[#15406d] font-bold text-xl ml-7 mr-7 mb-10" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>{t('loginScreen.register')}</h3>
+      <h1 className={`text-black font-bold text-5xl ml-7 mr-7 mb-10 register ${i18n.language}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>{t('loginScreen.login')}</h1>
+      <h3 className={`text-[#15406d] font-bold text-xl ml-7 mr-7 mb-10 registerh3 ${i18n.language}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>{t('loginScreen.register')}</h3>
       <div className="flex flex-col justify-center items-center">
         <div className="bg-black/5 pb-1 w-80" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
           <div className="flex bg-white items-center">
@@ -58,22 +58,13 @@ const LoginScreen = () => {
           </div>
         </div>
         <Link to="/live">
-        <button className="w-80 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl mb-3" onClick={handleLogin}>
+        <button className={`w-80 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl mb-3 registerbtn ${i18n.language}`} onClick={handleLogin}>
           {t('loginScreen.registerButton')}
         </button>
         </Link>
-        {i18n.language === 'fr' && (
-          <button onClick={changeLanguageToArabic} className="w-80 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl mb-3">
-            {t('loginScreen.arabic')}
-          </button>
-        )}
-        {i18n.language === 'ar' && (
-          <button onClick={changeLanguageToFrench} className="w-80 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl mb-3">
-            {t('loginScreen.french')}
-          </button>
-        )}
-        <div className="flex items-center text-white">
-          <span>{t('loginScreen.noAccount')}</span>
+     
+        <div className={`flex items-center text-white registerSpan ${i18n.language}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
+          <span className=' mx-1'>{t('loginScreen.noAccount')}</span>
           <Link to="/register" className='underline-offset-[4px] underline' >
             {t('loginScreen.signUp')}
           </Link>

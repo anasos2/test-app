@@ -14,6 +14,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import '../App.css'
+
 
 
 
@@ -57,7 +59,7 @@ const PerDay = () => {
   const [milkConsumed, setMilkConsumed] = useState([]);
   const [milkCoffeeConsumed, setMilkCoffeeConsumed] = useState([]);
   const [taiConsumed, setTaiConsumed] = useState([]);
-  console.log("first",selectedCategory)
+  
   
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -94,9 +96,9 @@ const PerDay = () => {
     setIsClicked(false);
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     calculateConsumptionByDayOrByDayAndByHour();
@@ -114,13 +116,11 @@ const PerDay = () => {
   };
 
   const calculateConsumptionByDayOrByDayAndByHour = () => {
-    console.log("Data length:", data.length);
-    console.log("Selected date:", selectedDate);
-    console.log("Selected time:", selectedTime);
+
 
     if (data.length > 0) {
       if (selectedDate != null && selectedTime === null) {
-        console.log("Calculating consumption by day...");
+       
 
         const filteredData = data.filter((item) =>
           dayjs(item.date).isSame(selectedDate, "day")
@@ -155,10 +155,10 @@ const PerDay = () => {
         setMilkCoffeCount(milkCoffeCount);
         setTaiCount(taiCount); // Set Tai count state
       } else if (selectedDate != null && selectedTime !== null) {
-        console.log("Calculating consumption by hour...");
+        
 
         const selectedHour = selectedTime.hour();
-        console.log("Selected hour:", selectedHour);
+        
 
         const filteredData = data.filter(
           (item) =>
@@ -183,11 +183,6 @@ const PerDay = () => {
           (item) => item.category === "tai"
         ).length; // Calculate Tai count
 
-        console.log("Coffee count:", coffeeCount);
-        console.log("Juice count:", juiceCount);
-        console.log("Milk count:", milkCount);
-        console.log("Milk Coffee count:", milkCoffeCount);
-        console.log("Tai count:", taiCount);
 
         setCoffeeCount(coffeeCount);
         setJuiceCount(juiceCount);
@@ -200,9 +195,7 @@ const PerDay = () => {
     }
   };
   const objConsumptionByDayOrByDayAndByHour = () => {
-    console.log("Data length:", data.length);
-    console.log("Selected date:", selectedDate);
-    console.log("Selected time:", selectedTime);
+
 
     if (data.length > 0) {
       if (selectedDate != null && selectedTime === null) {
@@ -229,22 +222,17 @@ const PerDay = () => {
           (item) => item.category === "tai"
         );
 
-        console.log("Coffee consumed:", coffeeConsumed);
-        console.log("Juice consumed:", juiceConsumed);
-        console.log("Milk consumed:", milkConsumed);
-        console.log("Milk Coffee consumed:", milkCoffeeConsumed);
-        console.log("Tai consumed:", taiConsumed);
-
+    
         setCoffeeConsumed(coffeeConsumed);
         setJuiceConsumed(juiceConsumed);
         setMilkConsumed(milkConsumed);
         setMilkCoffeeConsumed(milkCoffeeConsumed);
         setTaiConsumed(taiConsumed);
       } else if (selectedDate != null && selectedTime !== null) {
-        console.log("Calculating consumption by hour...");
+        
 
         const selectedHour = selectedTime.hour();
-        console.log("Selected hour:", selectedHour);
+        
 
         const filteredData = data.filter(
           (item) =>
@@ -269,11 +257,7 @@ const PerDay = () => {
           (item) => item.category === "tai"
         );
 
-        console.log("Coffee consumed:", coffeeConsumed);
-        console.log("Juice consumed:", juiceConsumed);
-        console.log("Milk consumed:", milkConsumed);
-        console.log("Milk Coffee consumed:", milkCoffeeConsumed);
-        console.log("Tai consumed:", taiConsumed);
+       
 
         setCoffeeConsumed(coffeeConsumed);
         setJuiceConsumed(juiceConsumed);
@@ -311,7 +295,7 @@ const PerDay = () => {
               dir={i18n.language === "ar" ? "rtl" : "ltr"}
             >
               <h5 className="text-gray-500">5/5/2024</h5>
-              <h1 className="text-white">{t("live.hello")}, Anas</h1>
+              <h1 className={`text-white hello ${i18n.language}`}>{t("live.hello")}, Anas</h1>
             </div>
             <div className="flex flex-col">
               <div className="flex">
@@ -368,7 +352,7 @@ const PerDay = () => {
               <div className=" ">
                 <div className="flex ">
                   <div className="w-1/2 bg-[#f9fafe] mx-4 rounded-2xl shadow-lg pl-10">
-                    <div className="pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554]">
+                    <div className={`pr-100 py-4 font-bold text-2xl mb-2 text-[#0a2554] rubik ${i18n.language}`}>
                       {t("live.coffee")}
                     </div>
                     {/* Replace the img src with your coffee icon */}
@@ -378,61 +362,61 @@ const PerDay = () => {
                       className="w-14 py-4"
                     />
                     <div className="font-bold text-xl mb-2 text-[#0a2554] pt-6">
-                      {coffeeCount}
+                      1
                     </div>
                     <div className="flex justify-between pb-4">
                       
-                 {coffeeCount >0 &&     
-                     <button className=" mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" type="button"onClick={() =>{ handleDetailClick("coffee"); handleClickOpen();}}> 
+                     
+                     <button className={`mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 rubikBold  ${i18n.language}`} type="button"onClick={() =>{ handleDetailClick("coffee"); handleClickOpen();}}> 
                        
                         {t("detail.detail")}
-                      </button>} 
+                      </button>
                     </div>
                   </div>
 
                   <div className="w-1/2 bg-[#f9fafe] mx-4 rounded-2xl shadow-lg pl-10">
-                    <div className="pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554]">
+                    <div className={`pr-100 py-4 font-bold text-2xl mb-2 text-[#0a2554] rubik ${i18n.language}`}>
                       {t("live.juice")}
                     </div>
                     <img src="../juice.svg" alt="juice" className="w-14 py-4" />
                     <div className="font-bold text-xl mb-2 text-[#0a2554] pt-6">
-                      {juiceCount}
+                      10
                     </div>
                     <div className="flex justify-between pb-4 ">
                       
-                    {juiceCount > 0 &&
-                        <button className=" mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" onClick={() => {handleDetailClick("milk"); handleClickOpen();}} type="button">{t("detail.detail")}</button>
-                    }
+                    
+                        <button className={`mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 rubikBold  ${i18n.language}`} onClick={() => {handleDetailClick("milk"); handleClickOpen();}} type="button">{t("detail.detail")}</button>
+                    
                     </div>
                   </div>
                 </div>
                 <div className="flex pt-3">
                   <div className="w-[150px]  bg-[#f9fafe] mx-4 rounded-2xl shadow-lg pl-10 ">
-                    <p className="pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554]  ">
+                    <p className={`pr-100 py-4 font-bold text-2xl mb-2 text-[#0a2554] rubik ${i18n.language}`}>
                       {t("live.milk")}
                     </p>
                     <img src="../milk.svg" alt="milk" className="w-14 py-4" />
                     <div className="font-bold text-xl mb-2 text-[#0a2554] pt-6">
-                      {milkCount}
+                      12
                     </div>
                     <div className="flex justify-between pb-4">
                       
-                   {milkCount > 0 &&
-                        <button className=" mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" onClick={() => {handleDetailClick("milk") ; handleClickOpen();}} type="button">{t("detail.detail")}</button>
-                      }
+                   
+                        <button className={`mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 rubikBold  ${i18n.language}`} onClick={() => {handleDetailClick("milk") ; handleClickOpen();}} type="button">{t("detail.detail")}</button>
+                      
                     </div>
                   </div>
                   <div className="w-[150px] bg-[#f9fafe] mx-4 rounded-2xl shadow-lg pl-10 max-w-1/2">
-                    <p className="pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554] max-w-1/2">
-                      {t("live.tai")}
+                    <p className={`pr-100 py-4 font-bold text-2xl mb-2 text-[#0a2554] rubik ${i18n.language}`}>
+                      {t("live.tea")}
                     </p>
                     <img src="../tai.svg" alt="milk" className="w-14 py-4" />
                     <div className="font-bold text-xl mb-2 text-[#0a2554] pt-6">
-                      {taiCount}
+                      2
                     </div>
                     <div className="flex justify-between">
                       
-                      {taiCount > 0 && <button className=" mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" type="button" onClick={() => { handleDetailClick("tai"); handleClickOpen(); }}>{t("detail.detail")}</button>}
+                       <button className={`mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 rubikBold  ${i18n.language}`} type="button" onClick={() => { handleDetailClick("tai"); handleClickOpen(); }}>{t("detail.detail")}</button>
                    
                       
 
@@ -442,7 +426,7 @@ const PerDay = () => {
                 </div>
                 <div className="flex pt-3">
                   <div className="w-[150px]  bg-[#f9fafe] mx-4 rounded-2xl shadow-lg pl-10 ">
-                    <p className="pr-10 py-4 font-bold text-2xl mb-2 text-[#0a2554]  ">
+                    <p className={`pr-100 py-4 font-bold text-2xl mb-2 text-[#0a2554] rubik ${i18n.language}`}>
                       {t("live.milkCoffee")}
                     </p>
                     <img
@@ -451,12 +435,14 @@ const PerDay = () => {
                       className=" w-16 py-4"
                     />
                     <div className="font-bold text-xl mb-2 text-[#0a2554] pt-6">
-                      {milkCoffeCount}
+                      5
                     </div>
                     <div className="flex justify-between pb-4">
                       
                     
-                      {milkCoffeCount > 0 &&     <button className=" mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" type="button" onClick={() => {handleDetailClick("milkCoffee"); handleClickOpen();}}>{t("detail.detail")}</button>}
+                      {/* {milkCoffeCount > 0 &&    */}
+                        <button className={`mr-2 rounded border border-indigo-600 bg-[#0a2554] w-[60%] text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 rubikBold  ${i18n.language}`} type="button" onClick={() => {handleDetailClick("milkCoffee"); handleClickOpen();}}>{t("detail.detail")}</button>
+                        {/* } */}
                       
                     </div>
                   </div>

@@ -1,9 +1,117 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import url("https://cdn.syncfusion.com/ej2/material.css");
 
-
-.colorr{
-color: #ffffff;
+@font-face {
+  font-family: rubikBlack;
+  src: url(../public/Rubik-Black.ttf);
+}
+@font-face {
+  font-family: rubikBold;
+  src: url(../public/Rubik-Bold.ttf);
+}
+@font-face {
+  font-family: cairoBlack;
+  src: url(../public/Cairo-Black.ttf);
+}
+@font-face {
+  font-family: cairoBold;
+  src: url(../public/Cairo-SemiBold.ttf);
+}
+@font-face {
+  font-family: ExtraBold;
+  src: url(../public/Cairo-ExtraBold.ttf);
+}
+.rubik.fr{
+  font-family: rubikBlack;
+  
+  
+}
+.rubikBold.fr{
+  font-family: rubikBold;
+  
+  
+}
+.rubikBold.ar{
+  font-family: cairoBold;
+  
+  
+}
+.rubik.ar{
+  font-family: cairoBlack;
+  
+  
+}
+.rubikBold{
+  font-family: cairoBold;
+}
+.language.ar{
+  font-family: ExtraBold;
+}
+.languageh3.ar{
+  font-family: cairoBlack;
+}
+.languageBtn.ar{
+  font-family: cairoBlack;
+}
+.language.fr{
+  font-family: rubikBold;
+}
+.languageh3.fr{
+  font-family: rubikBlack;
+}
+.languageBtn.fr{
+  font-family: rubikBlack;
+}
+.register.ar{
+  font-family:ExtraBold;
+ 
+}
+.registerh3.ar{
+  font-family:cairoBlack;
+ 
+}
+.registerbtn.ar{
+  font-family:cairoBlack;
+ 
+}
+.registerSpan.ar{
+  font-family:cairoBold;
+ 
+}
+.register.fr{
+  font-family:rubikBold;
+ 
+}
+.registerh3.fr{
+  font-family:rubikBlack;
+ 
+}
+.registerbtn.fr{
+  font-family:rubikBlack;
+ 
+}
+.registerSpan.fr{
+  font-family:rubikBold;
+ 
+}
+.pourcentage.fr{
+  font-family:rubikBold;
+}
+.pourcentage.ar{
+  font-family:cairoBlack;
+}
+.menu.ar{
+  font-family:cairoBlack;
+}
+.menu.fr{
+  font-family:rubikBlack;
+}
+.hello.fr{
+  font-family:rubikBold;
+}
+.hello.ar{
+  font-family:cairoBlack;
 }
